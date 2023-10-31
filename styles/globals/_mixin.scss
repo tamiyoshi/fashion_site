@@ -1,4 +1,6 @@
+// アニメーションの関数
 @mixin animation(
+  // デフォルト値
   $name,
   $duration: 1s,
   $timing-function: ease,
@@ -8,6 +10,7 @@
   $fill-mode: forwards
 ) {
   animation: {
+    // 変更時のプロパティ名
     name: $name;
     duration: $duration;
     timing-function: $timing-function;
@@ -18,7 +21,9 @@
   }
 }
 
+// 疑似要素の関数
 @mixin p-base(
+  // デフォルト値
   $which: before,
   $top: 0,
   $left: 0,
@@ -29,6 +34,7 @@
   $display: block
 ) {
   &::#{$which} {
+    // 変更時のプロパティ名
     display: $display;
     content: $content;
     position: $position;

@@ -22,11 +22,12 @@
 
       @include animation(
         $name: kf-cover-slide,
-        $duration: 1.6s,
+        $duration: 0.6s,
         $timing-function: ease-in-out,
         $fill-mode: both
       );
     }
+  
   }
 }
 
