@@ -1,0 +1,417 @@
+@use "../parts/common" as *;
+@use "../globals/index" as *;
+
+#container {
+  transition: transform 0.5s, box-shadow 0.5s;
+  background: $cWhite;
+  position: relative;
+  z-index: 100;
+}
+// ロゴ
+.logo {
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+
+  &_img {
+    width: 1em;
+  }
+
+  &_world {
+    color: $cWineRed;
+  }
+}
+
+// ヘッダー
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $navHeight;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  transition: all 0.5s ease;
+
+  & .close {
+    opacity: 0;
+  }
+
+  &.hide {
+    transform: translateY(-100px);
+  }
+
+  &.triggered {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  &_inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @extend .content-width;
+  }
+
+  &_nav {
+    display: none;
+
+    @include mq(lg) {
+      display: block;
+    }
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  &_ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  &_li {
+    margin: 10px;
+
+    @include mq(md) {
+      margin-left: 30px;
+      margin-right: 0;
+    }
+
+    & > a {
+      color: $cBlack;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  & .logo {
+    justify-content: center;
+
+    @include mq(md) {
+      font-size: 35px;
+      justify-content: flex-start;
+    }
+  }
+}
+
+// メイン
+// スライダー
+.hero {
+  @include mq(xl) {
+    padding: 220px 0 400px 0;
+  }
+
+  padding: 100px 0;
+}
+// サイド
+.side {
+  display: none;
+  position: fixed;
+  top: 70%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+
+  @include mq(md) {
+    display: block;
+  }
+
+  &.left {
+    left: -50px;
+
+    &.inview {
+      left: 10px;
+    }
+
+    & .side_inner {
+      transform-origin: top left;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &.right {
+    right: -50px;
+
+    &.inview {
+      right: 10px;
+    }
+
+    & .side_inner {
+      transform-origin: top right;
+      transform: rotate(90deg);
+    }
+  }
+
+  & .tween-animate-title {
+    color: $cBlack;
+    text-decoration: none !important;
+    margin: 0 40px;
+    vertical-align: middle;
+    letter-spacing: 2px;
+  }
+}
+// SNSアイコン
+.icon {
+  position: relative;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 1em;
+    height: 1em;
+    transform: translateY(-50%);
+    background-position: center;
+    background-repeat: none;
+    background-size: contain;
+  }
+
+  &.twitter::before {
+    background-image: url(../images/twitter.svg);
+  }
+
+  &.fb::before {
+    background-image: url(../images/facebook.svg);
+  }
+}
+// 旅行
+.travel {
+  @extend .content-width;
+  @extend .mb-lg;
+
+  &_inner {
+    position: relative;
+    z-index: 0;
+    @extend .flex;
+    justify-content: space-between;
+
+    background: $cBgGray;
+    padding: 15px;
+
+    @include mq(md) {
+      padding: 50px;
+    }
+
+    @include mq(xl) {
+      padding: 50px 150px;
+    }
+  }
+
+  &_img {
+    height: 300px;
+    @extend .mb-sm;
+    transition: box-shadow 2s ease 1s;
+
+    &.inview {
+      box-shadow: inset 0 0 30px $cBlack;
+    }
+
+    @include mq(md) {
+      flex-basis: 47%;
+    }
+    @include mq(lg) {
+      height: 400px;
+    }
+
+    & > img {
+      position: relative;
+      z-index: -1;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &_texts {
+    @extend .pb-sm;
+
+    @include mq(md) {
+      display: flex;
+      align-items: flex-end;
+      flex-basis: 47%;
+    }
+
+    &.inview {
+      & .travel_title::before {
+        @include animation($name: scaleX, $duration: 0.5s, $delay: 1.6s);
+      }
+    }
+  }
+
+  &_title {
+    position: relative;
+
+    &::before {
+      display: none;
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100px;
+      top: 50%;
+      left: -120px;
+      background: $cBlack;
+      transform: scaleX(0);
+      transform-origin: right;
+      @include mq(lg) {
+        display: block;
+      }
+    }
+  }
+  &_description {
+    @include mq(lg) {
+      margin-bottom: 40px;
+    }
+  }
+}
+// 旅行 棒線アニメーション用
+@keyframes scaleX {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+// 洋服
+.clothe {
+  @extend .content-width;
+  @extend .mb-lg;
+
+  &_inner {
+    @extend .flex;
+    justify-content: space-between;
+  }
+  &_title {
+    @extend .mb-sm;
+    @extend .font-lr;
+  }
+  &_item {
+    @include mq(md) {
+      flex-basis: 49%;
+    }
+    @include mq(lg) {
+      margin-bottom: 60px;
+    }
+  }
+  &_btn {
+    text-align: center;
+    flex-basis: 100%;
+  }
+}
+// 観光地
+.popular {
+  &_header {
+    @extend .content-width;
+  }
+
+  &_inner {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 90%;
+      width: 100%;
+      left: 0;
+      background: $cBgGray;
+    }
+  }
+
+  &_container {
+    position: relative;
+    z-index: 2;
+    @extend .content-width;
+    @extend .flex;
+    justify-content: space-between;
+  }
+
+  &_item {
+    @include mq(md) {
+      flex-basis: 47%;
+    }
+
+    @include mq(lg) {
+      flex-basis: 25%;
+    }
+
+    @include mq(xl) {
+      flex-basis: 23%;
+    }
+  }
+
+  &_title {
+    @extend .mb-sm;
+    @extend .font-md;
+  }
+
+  &_img {
+    height: 150px;
+    margin-bottom: 4px;
+
+    @include mq(lg) {
+      height: 335px;
+    }
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &_btn {
+    text-align: center;
+    flex-basis: 100%;
+    @extend .mb-lg;
+  }
+}
+
+// フッター
+.footer {
+  padding: 60px 0;
+
+  @extend .content-width;
+
+  &_nav {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  &_ul {
+    @extend .flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  &_li {
+    margin: 10px;
+
+    @include mq(md) {
+      margin-left: 0;
+      margin-right: 30px;
+    }
+
+    & > a {
+      color: $cSubTitle;
+      text-decoration: none;
+    }
+  }
+
+  & > .logo {
+    justify-content: center;
+
+    @include mq(md) {
+      justify-content: flex-start;
+    }
+  }
+}
