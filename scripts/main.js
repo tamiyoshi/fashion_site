@@ -1,1 +1,40 @@
-class Main{constructor(){this.header=document.querySelector(".header"),this.hero=new HeroSlider(".swiper"),this.sides=document.querySelectorAll(".side"),this._observers=[],this._init()}_init(){new MobileMenu,Pace.on("done",this._scrollInit.bind(this))}destroy(){this._observers.forEach(e=>e.destroy())}_scrollInit(){this._observers.push(new ScrollObserver("#main-content",this._sideAnimation.bind(this),{once:!1,rootMargin:"-300px 0px"}),new ScrollObserver(".nav-trigger",this._navAnimation.bind(this),{once:!1}),new ScrollObserver(".swiper",this._toggleSlidAnimation.bind(this),{once:!1}),new ScrollObserver(".cover-slide",this._inviewAnimation),new ScrollObserver(".appear",this._inviewAnimation),new ScrollObserver(".tween-animate-title",this._textAnimation))}_toggleSlidAnimation(e,i){i?this.hero.start():this.hero.stop()}_textAnimation(e,i){if(i){let t=new TweenTextAnimation(e);t.animate()}}_navAnimation(e,i){i?this.header.classList.remove("triggered"):this.header.classList.add("triggered")}_sideAnimation(e,i){i?this.sides.forEach(e=>e.classList.add("inview")):this.sides.forEach(e=>e.classList.remove("inview"))}_inviewAnimation(e,i){i?e.classList.add("inview"):e.classList.remove("inview")}}new Main;const header=document.querySelector(".header");let set_position=0;window.addEventListener("scroll",function(){set_position<document.documentElement.scrollTop?header.classList.add("hide"):header.classList.remove("hide"),set_position=document.documentElement.scrollTop});const mmb=document.querySelector(".mobile-menu__btn");mmb.addEventListener("click",()=>{mmb.classList.add("close")});const mmc=document.querySelector(".mobile-menu__cover");mmc.addEventListener("click",()=>{mmb.classList.remove("close")});
+// spanで囲む為の記述
+const circleElement = document.querySelector(".circle_text");
+const splitTexts = circleElement.textContent.split("");
+
+let outputText = "";
+splitTexts.forEach(
+  (s, i) =>
+    (outputText +=
+      s === "  " ? "  " : `<span style="--number: ${i + 1}">${s}</span>`)
+);
+circleElement.innerHTML = outputText;
+//
+//
+//
+//
+//
+// トップページ戻りボタン
+const ioDom = document.querySelector("#skill");
+const pageTopBtn = document.querySelector("#page_top");
+
+const options = {
+  root: null,
+  rootMargin: "800px",
+};
+
+const cb = function (entries) {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      // 監視中
+      pageTopBtn.classList.remove("hidden");
+    } else {
+      // 監視外
+      pageTopBtn.classList.add("hidden");
+    }
+  });
+};
+
+const io = new IntersectionObserver(cb, options);
+
+io.observe(ioDom);

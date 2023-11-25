@@ -2,323 +2,309 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <title>Tamiyoshi Matsumoto Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Fashion Site</title>
-    <meta name="robots" content="noindex">
-    <link rel="icon" href="images/pageicon02.png" />
-    <link rel="stylesheet" href="styles/loader.css" />
-    <!-- フォント系 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP:wght@500&display=swap"
-      rel="stylesheet"
+    <meta
+      content="松本民好です。私は自分の創造力を形にすることに面白さを感じ、Web業界を目指しました。"
+      name="description"
     />
-    <!-- リセットCSS -->
-    <link rel="stylesheet" href="styles/vendors/css-reset.css" />
-    <!-- スタイルCSS -->
-    <link rel="stylesheet" href="styles/vendors/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <!-- 各種JS -->
-    <script src="scripts/vendors/gsap.min.js" defer></script>
-    <script src="scripts/vendors/pace.js"></script>
+    <meta property="og:title" content="Tamiyoshi Matsumoto Portfolio" />
+    <meta
+      property="og:description"
+      content="松本民好です。私は自分の創造力を形にすることに面白さを感じ、Web業界を目指しました。"
+    />
+    <meta property="og:type" content="個人サイト" />
+    <meta
+      property="og:url"
+      content="https://tamiyoshi-matsumoto-portfolio.netlify.app/"
+    />
+    <meta property="og:image" content="images/ogp_thumbnail.png" />
+    <meta property="og:site_name" content="Tamiyoshi Matsumoto Portfolio" />
+    <meta property="og:locale" content="ja_JP" />
+    <!-- <meta name="robots" content="noindex,nofollow"> -->
 
-    <script src="scripts/vendors/swiper-bundle.min.js" defer></script>
-    <script src="scripts/libs/hero-slider.js" defer></script>
+    <!-- css関係 -->
+    <link rel="stylesheet" href="style.css" />
 
-    <script src="scripts/vendors/scroll-polyfill.js" defer></script>
-    <script src="scripts/libs/scroll.js" defer></script>
-
-    <script src="scripts/libs/mobile-menu.js" defer></script>
-
-    <script src="scripts/libs/text-animation.js" defer></script>
-    <script src="scripts/main.js" defer></script>
+    <!-- js関係 -->
+    <script src="./scripts/main.js" defer></script>
   </head>
 
   <body>
-    <div id="global-container">
-      <!-- ハンバーガースマホメニュー -->
-      <nav class="mobile-menu">
-        <div class="logo">
-          <img class="logo_img" src="images/pageicon02.png" alt="" />
-          <span class="logo_stay">Tamiyoshi</span>
-          <span class="logo_world">&nbsp;P</span>
-        </div>
-        <ul class="mobile-menu__main">
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#">
-              <span class="main-title">Our Service</span>
-              <span class="sub-title">サービスについて</span>
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#">
-              <span class="main-title">About Us</span>
-              <span class="sub-title">私たちについて</span>
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#">
-              <span class="main-title">Contact Us</span>
-              <span class="sub-title">コンタクト方法</span>
-            </a>
-          </li>
+    <!-- トップリターンボタン -->
+    <a href="#" id="page_top"><i class="blogicon-chevron-up"></i></a>
+    <!-- ヘッダー -->
+    <header class="header">
+      <a href="index.html"
+        ><div class="header_icon">
+          <div class="header_icon_img">
+            <img src="./images/favicon.svg" alt="" />
+          </div>
+          <div class="header_icon_text">TAMIYOSHI</div>
+        </div></a
+      >
+      <nav class="header_nav">
+        <ul class="heaer_ul">
+          <li class="header_li"><a href="#about">about</a></li>
+          <li class="header_li"><a href="#works">works</a></li>
+          <li class="header_li"><a href="#skill">skill</a></li>
+          <li class="header_li"><a href="#contact">contact</a></li>
         </ul>
       </nav>
-      <!-- ホームメニュー ラッパー -->
-      <div id="container">
-        <div class="mobile-menu__cover"></div>
-        <div class="nav-trigger"></div>
-        <!-- ヘッダー -->
-        <header class="header">
-          <div class="header_inner appear up">
-            <!-- ロゴ -->
-            <div class="logo item">
-              <img class="logo_img" src="images/pageicon02.png" alt="" />
-              <span class="logo_stay">Tamiyoshi</span>
-              <span class="logo_world">&nbsp;P</span>
-            </div>
-            <!-- ナビゲーション -->
-            <nav class="header_nav">
-              <ul class="header_ul">
-                <li class="header_li"><a href="#">Service</a></li>
-                <li class="header_li"><a href="#">Company</a></li>
-                <li class="header_li">
-                  <a href="#" class="btn filled">Contact</a>
-                </li>
-              </ul>
-            </nav>
-            <!-- ハンバーガーメニューボタン -->
-            <button class="mobile-menu__btn">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
+    </header>
+    <main class="main">
+      <div class="main_inner">
+        <!-- ユーザートップ -->
+        <section class="top" id="top">
+          <div class="circle_animation">
+            <p class="circle_text">TAMIYOSHI MATSUMOTO PORTFOLIO</p>
           </div>
-        </header>
-        <!-- メイン -->
-        <div id="content">
-          <!-- スライダー -->
-          <div class="hero">
-            <div class="swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="hero__title">Enjoy Rich</div>
-                  <img src="images/img01.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <div class="hero__title">Fantastic</div>
-                  <img src="images/img02.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <div class="hero__title">Experience</div>
-                  <img src="images/img03.jpg" alt="" />
-                </div>
-              </div>
-              <div class="hero__footer">
-                <img class="hero__downarrow" src="images/arrow.svg" />
-                <span class="hero__scrolltext">scroll</span>
-              </div>
+          <div class="text_animation01">
+            <div class="text_animation01_right">TAMIYOSHI</div>
+            <div class="text_animation01_right_second">TAMIYOSHI</div>
+          </div>
+          <div class="text_animation02">
+            <div class="text_animation02_left">OTOMUSTAM</div>
+            <div class="text_animation02_left_second">OTOMUSTAM</div>
+          </div>
+          <div class="text_animation03">
+            <div class="text_animation03_right">PORTFOLIO</div>
+            <div class="text_animation03_right_second">PORTFOLIO</div>
+          </div>
+        </section>
+        <!-- アバウト -->
+        <section class="about" id="about">
+          <h2 class="about_title">About</h2>
+          <div class="about_inner">
+            <div class="about_inner_img">
+              <img src="./images/user_img_01.jpg" alt="" />
+            </div>
+            <div class="about_inner_text">
+              <p>
+                松本民好です。私は自分の創造力を形にすることに面白さを感じ、Web業界を目指しました。
+                業界未経験で不安もありますがそれ以上にこの業界で活躍したいという気持ちや期待感が大きいです。
+              </p>
+              <p>
+                職業訓練でHTML,CSSを学んでいく内にそれだけでは思い通りのものが表現できない事がわかり、独学で
+                javascriptを学習し始めました。まだまだ理解不足がですが早く一人前になれるように、日々学習をしています。
+                ある程度学習が進んだ後はReact,Next.jsなどモダンな技術だったりバックエンドの技術も学習したいです。
+              </p>
+              <p>
+                即戦力としてはまだまだ実力不足ですが、向上心と意欲で一日でも早く実力を付けていきます。
+              </p>
             </div>
           </div>
-          <!-- コンテンツ -->
-          <div id="main-content">
-            <!-- サイド -->
-            <aside class="side left">
-              <div class="side_inner">
-                <a href="#" class="twitter icon tween-animate-title">Twitter</a>
-                <a href="#" class="fb icon tween-animate-title">Facebook</a>
+        </section>
+        <!-- 作品一覧 -->
+        <section class="works" id="works">
+          <h2 class="works_title">Works</h2>
+          <div class="works_inner">
+            <div class="works_content">
+              <div class="works_content_img">
+                <img src="./images/works_img_01.png" alt="" />
               </div>
-            </aside>
-            <main>
-              <!-- トラベル -->
-              <section class="travel">
-                <div class="travel_inner">
-                  <!-- "トラベル" 画像 -->
-                  <div class="travel_img cover-slide">
-                    <img class="img-zoom" src="images/img_travel.jpg" alt="" />
-                  </div>
-                  <!-- "トラベル"テキストコンテンツ -->
-                  <div class="travel_texts appear left">
-                    <div class="travel_texts-inner">
-                      <div class="travel_title main-title item">
-                        <span class="purple">Travel</span>
-                        <span>the world</span>
-                      </div>
-                      <div class="travel_sub sub-title item">
-                        世界中を旅しよう
-                      </div>
-                      <div class="travel_description item">
-                        <p>世界の様々な<br />ファッションを見てみよう。</p>
-                        <p>あなたの望むファッションがきっと見つかる。</p>
-                      </div>
-                      <!-- "トラベル"ボタン -->
-                      <div class="travel_btn item">
-                        <button class="btn filled">もっと詳しく</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <!-- 洋服 -->
-              <section class="clothe">
-                <!-- "洋服"見出し -->
-                <div>
-                  <h2 class="main-title tween-animate-title">
-                    Find Your Clothes
-                  </h2>
-                  <p class="sub-title tween-animate-title">
-                    お気に入りの洋服を見つけよう
-                  </p>
-                </div>
-                <!-- "洋服"コンテンツ -->
-                <div class="clothe_inner">
-                  <!-- １ -->
-                  <div class="clothe_item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(images/style01.jpg)"
-                      ></div>
-                    </div>
-                    <p class="clothe_title">Style1</p>
-                  </div>
-                  <!-- ２ -->
-                  <div class="clothe_item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(images/style12.jpg)"
-                      ></div>
-                    </div>
-                    <p class="clothe_title">Style2</p>
-                  </div>
-                  <!-- ３ -->
-                  <div class="clothe_item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(images/style03.jpg)"
-                      ></div>
-                    </div>
-                    <p class="clothe_title">Style3</p>
-                  </div>
-                  <!-- ４ -->
-                  <div class="clothe_item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(images/style13.jpg)"
-                      ></div>
-                    </div>
-                    <p class="clothe_title">Style4</p>
-                  </div>
-                  <!-- ５ -->
-                  <div class="clothe_item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(images/style09.jpg)"
-                      ></div>
-                    </div>
-                    <p class="clothe_title">Style5</p>
-                  </div>
-                  <!-- ６ -->
-                  <div class="clothe_item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(images/style10.jpg)"
-                      ></div>
-                    </div>
-                    <p class="clothe_title">Style6</p>
-                  </div>
-                  <!-- "洋服"ボタン -->
-                  <div class="clothe_btn">
-                    <button class="btn slide-bg">もっと詳しく</button>
-                  </div>
-                </div>
-              </section>
-              <!-- 観光地 -->
-              <section class="popular">
-                <!-- "観光地"見出し -->
-                <div class="popular_header">
-                  <h2 class="main-title tween-animate-title">Popular Place</h2>
-                  <p class="sub-title tween-animate-title">
-                    人気の観光地で洋服を探そう
-                  </p>
-                </div>
-                <!-- "観光地"コンテンツ -->
-                <div class="popular_inner appear up">
-                  <div class="popular_container">
-                    <!-- パリ -->
-                    <div class="popular_item item">
-                      <div class="popular_img">
-                        <img src="images/image-p1.jpg" alt="" />
-                      </div>
-                      <p class="popular_title">パリ</p>
-                    </div>
-                    <!-- ニューヨーク -->
-                    <div class="popular_item item">
-                      <div class="popular_img">
-                        <img src="images/image-p2.jpg" alt="" />
-                      </div>
-                      <p class="popular_title">ニューヨーク</p>
-                    </div>
-                    <!-- 香港 -->
-                    <div class="popular_item item">
-                      <div class="popular_img">
-                        <img src="images/image-p3.jpg" alt="" />
-                      </div>
-                      <p class="popular_title">香港</p>
-                    </div>
-                    <!-- 大阪 -->
-                    <div class="popular_item item">
-                      <div class="popular_img">
-                        <img src="images/image-p4.jpg" alt="" />
-                      </div>
-                      <p class="popular_title">大阪</p>
-                    </div>
-                    <!-- "観光地"ボタン -->
-                    <div class="popular_btn item">
-                      <button class="btn cover-3d">
-                        <span>一覧から探す</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </main>
-            <!-- サイド -->
-            <aside class="side right">
-              <div class="side_inner">
-                <span class="tween-animate-title">&copy; Tamiyoshi</span>
+              <a
+                href="https://tamiyoshi-fashionsite.netlify.app/"
+                target="”_blank”"
+                ><h4>（Udemy講座で作ったサイト）</h4></a
+              >
+              <p>
+                講座のレベルが高く難しかったが、css,Saas,javascriptについて理解を深めることが出来ました。
+              </p>
+            </div>
+            <div class="works_content">
+              <div class="works_content_img">
+                <img src="./images/works_img_02.png" alt="" />
               </div>
-            </aside>
+              <a
+                href="https://tamiyoshi-travelsite.netlify.app/"
+                target="”_blank”"
+                ><h4>（テーマ「旅行」で作った架空サイト）</h4></a
+              >
+              <p>
+                まだjavascriptを学習していない時に作ったサイトで
+                jsを使わずにハンバーガーメニューをの実装を試みました。
+              </p>
+            </div>
+            <div class="works_content">
+              <div class="works_content_img">
+                <img src="./images/works_img_03.png" alt="" />
+              </div>
+              <a
+                href="https://tamiyoshi-autumnsite.netlify.app/"
+                target="”_blank”"
+                ><h4>（テーマ「秋」で作った架空サイト）</h4></a
+              >
+              <p>
+                javascriptについて少し勉強した段階で作成したもので、DOM操作についての理解が深まりました。
+              </p>
+            </div>
+            <!-- 実績等が増えれば都度追加していく -->
+            <!-- <div class="works_content">
+              <div class="works_content_img">
+                <img src="" alt="" />
+              </div>
+              <p>文章が入ります。文章が入ります。文章が入ります。</p>
+            </div> -->
           </div>
-        </div>
-        <!-- フッター -->
-        <footer class="footer appear up">
-          <!-- ロゴ -->
-          <div class="logo item">
-            <img class="logo_img" src="images/pageicon02.png" alt="" />
-            <span class="logo_stay">Tamiyoshi</span>
-            <span class="logo_world">&nbsp;P</span>
+        </section>
+        <!-- 技術一覧 -->
+        <section class="skill" id="skill">
+          <h2 class="skill_title">Skill</h2>
+          <div class="skill_inner">
+            <div class="skill_content">
+              <div class="skill_content_img">
+                <img src="./images/icon_01.png" alt="" />
+              </div>
+              <div class="skill_content_text">
+                <h4>HTML</h4>
+                <p>基本的なコーディングができます。</p>
+              </div>
+            </div>
+            <div class="skill_content">
+              <div class="skill_content_img">
+                <img src="./images/icon_02.png" alt="" />
+              </div>
+              <div class="skill_content_text">
+                <h4>CSS</h4>
+                <p>基本的なコーディングができます。</p>
+              </div>
+            </div>
+            <div class="skill_content">
+              <div class="skill_content_img">
+                <img src="./images/icon_03.png" alt="" />
+              </div>
+              <div class="skill_content_text">
+                <h4>Sass</h4>
+                <p>基本的なSassの機能を使用できます。</p>
+              </div>
+            </div>
+            <div class="skill_content">
+              <div class="skill_content_img">
+                <img src="./images/icon_04.png" alt="" />
+              </div>
+              <div class="skill_content_text">
+                <h4>Javascript</h4>
+                <p>
+                  DOM操作など簡単なJsを実装できます。
+                  jqueryやGSAP、Swiperなどのライブラリも
+                  簡単なものなら実装できます。
+                </p>
+              </div>
+            </div>
           </div>
-          <!-- ナビゲーション -->
-          <nav class="footer_nav">
-            <ul class="footer_ul">
-              <li class="footer_li item"><a href="#">Service</a></li>
-              <li class="footer_li item"><a href="#">Contact</a></li>
-              <li class="footer_li item"><a href="#">Company</a></li>
-              <li class="footer_li item"><a href="#">Sitemap</a></li>
-            </ul>
-            <!-- コピーライト -->
-            <div class="footer_copylight item">&copy; Tamiyoshi</div>
-          </nav>
-        </footer>
+        </section>
+        <!-- 問合せ -->
+        <section class="contact" id="contact">
+          <h2 class="contact_title">Contact</h2>
+          <div class="contact_inner">
+            <p class="contact_inner_text">
+              ポートフォリオサイトをご覧いただきありがとうございました。<br />
+              ご連絡やお問い合わせは下記よりお願いいたします。
+            </p>
+            <!-- lufttoolsというサイトで暗号化したメール -->
+            <p>
+              <script type="text/javascript">
+                <!--
+                function converter(M) {
+                  var str = "",
+                    str_as = "";
+                  for (var i = 0; i < M.length; i++) {
+                    str_as = M.charCodeAt(i);
+                    str += String.fromCharCode(str_as + 1);
+                  }
+                  return str;
+                }
+                function mail_to(k_1, k_2) {
+                  eval(
+                    String.fromCharCode(
+                      108,
+                      111,
+                      99,
+                      97,
+                      116,
+                      105,
+                      111,
+                      110,
+                      46,
+                      104,
+                      114,
+                      101,
+                      102,
+                      32,
+                      61,
+                      32,
+                      39,
+                      109,
+                      97,
+                      105,
+                      108,
+                      116,
+                      111,
+                      58
+                    ) +
+                      escape(k_1) +
+                      converter(
+                        String.fromCharCode(
+                          115,
+                          96,
+                          108,
+                          104,
+                          120,
+                          110,
+                          114,
+                          103,
+                          104,
+                          45,
+                          97,
+                          114,
+                          106,
+                          45,
+                          48,
+                          47,
+                          47,
+                          50,
+                          63,
+                          102,
+                          108,
+                          96,
+                          104,
+                          107,
+                          45,
+                          98,
+                          110,
+                          108,
+                          62,
+                          114,
+                          116,
+                          97,
+                          105,
+                          100,
+                          98,
+                          115,
+                          60
+                        )
+                      ) +
+                      escape(k_2) +
+                      "'"
+                  );
+                }
+                document.write(
+                  '<a href=JavaScript:mail_to("","")><img src="./images/mail.svg" alt="" width="50" /><\/a>'
+                );
+                //-->
+              </script>
+            </p>
+            <div class="contact_inner_img">
+              <a href=""> </a>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
+    </main>
+    <!-- フッター -->
+    <footer class="footer">
+      <p>&copy; 2023 Tamiyoshi Matsumoto Portfolio.</p>
+    </footer>
   </body>
 </html>
